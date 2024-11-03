@@ -10,8 +10,10 @@ public enum ScenarioTests {
     T4("Valid login with blank password credentials"),
     T5("Valid login with locked out user"),
     // feature add products
-    T6("Adding products to cart");
+    T6("Adding products to cart"),
     // feature check out products
+    T7("Succesful checkout process"),
+    T8("Unsuccesful checkout process");
 
     private String scenarioTestName;
     ScenarioTests(String value){

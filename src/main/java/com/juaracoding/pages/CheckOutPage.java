@@ -14,8 +14,8 @@ public class CheckOutPage {
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(xpath = "//button[@id='checkout']")
-    private WebElement itemCheckOut;
+    @FindBy(xpath = "//span[@class='title']")
+    private WebElement checkOutInfo;
 
     @FindBy(xpath = "//input[@id='first-name']")
     private WebElement firstName;
@@ -29,7 +29,6 @@ public class CheckOutPage {
     @FindBy(xpath = "//div[normalize-space()='Payment Information:']")
     private WebElement validInformation;
 
-
     @FindBy(xpath = "//input[@id='continue']")
     private WebElement btnContinue;
 
@@ -39,13 +38,24 @@ public class CheckOutPage {
     @FindBy(xpath = "//button[@id='back-to-products']")
     private WebElement btnBackHome;
 
-    public void checkOut(){
-        itemCheckOut.click();
-    }
+    @FindBy(xpath = "//div[contains(@class, 'error-message-container')]//h3[contains(@data-test, 'error') and (contains(text(), 'First Name is required') or contains(text(), 'Postal Code is required'))]")
+    private WebElement invalidInformation;
 
-    public void inputInformation(String firstName, String lastName, String zipCode){
+    /*public void inputInformation(String firstName, String lastName, String zipCode){
         this.firstName.sendKeys(firstName);
         this.lastName.sendKeys(lastName);
+        this.zipCode.sendKeys(zipCode);
+    }*/
+
+    public void setFirstName(String firstName){
+        this.firstName.sendKeys(firstName);
+    }
+
+    public void setLastName(String lastName){
+        this.lastName.sendKeys(lastName);
+    }
+
+    public void setZipCode(String zipCode){
         this.zipCode.sendKeys(zipCode);
     }
 
@@ -63,6 +73,14 @@ public class CheckOutPage {
 
     public String inputValidInformation(){
         return validInformation.getText();
+    }
+
+    public String isOnCheckOutPage(){
+        return checkOutInfo.getText();
+    }
+
+    public String inputInvalidInformation(){
+        return invalidInformation.getText();
     }
 
 }

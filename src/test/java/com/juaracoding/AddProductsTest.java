@@ -48,22 +48,28 @@ public class AddProductsTest {
         extentTest.log(LogStatus.PASS,"User logged in");
     }
 
-    @When("I click the add to cart button for backpack")
-    public void i_click_the_add_to_cart_button_for_backpack(){
+    @When("The user click the add to cart button for backpack")
+    public void the_user_click_the_add_to_cart_button_for_backpack(){
         addProduct.addBackPack();
-        extentTest.log(LogStatus.PASS,"I click the add to cart button for backpack");
+        extentTest.log(LogStatus.PASS,"The user click the add to cart button for backpack");
     }
 
-    @And("I click the add to cart button for bike light")
-    public void i_click_the_add_to_cart_button_for_bike_light(){
+    @And("The user click the add to cart button for bike light")
+    public void the_user_click_the_add_to_cart_button_for_bike_light(){
         addProduct.addBikeLight();
-        extentTest.log(LogStatus.PASS,"I click the add to cart button for bike light");
+        extentTest.log(LogStatus.PASS,"The user click the add to cart button for bike light");
     }
 
-    @Then("I click cart confirmation button")
-    public void i_click_cart_confirmation_button(){
+    @And("The user click cart confirmation button")
+    public void the_user_click_cart_confirmation_button(){
         addProduct.checkCart();
-        extentTest.log(LogStatus.PASS,"I click cart confirmation button");
+        extentTest.log(LogStatus.PASS,"The user click cart confirmation button");
+    }
+
+    @Then("The user click the checkout button")
+    public void the_user_click_the_checkout_button(){
+        addProduct.checkOut();
+        extentTest.log(LogStatus.PASS,"The user click the checkout button");
     }
 
 }

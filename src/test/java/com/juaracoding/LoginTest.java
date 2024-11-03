@@ -119,6 +119,7 @@ public class LoginTest {
     @Then("I should see the message invalid credentials locked out user")
     public void i_should_see_the_message_invalid_credentials_locked_out_user(){
         Assert.assertEquals(loginPage.getTxtLockedOutUser(),"Epic sadface: Sorry, this user has been locked out.");
+        loginPage.clearFields();
         extentTest.log(LogStatus.PASS,"I should see the message invalid credentials locked out user");
     }
 }

@@ -25,6 +25,9 @@ public class AddProducts {
     @FindBy(xpath = "//a[@class='shopping_cart_link']")
     private WebElement btnCart;
 
+    @FindBy(xpath = "//button[@id='checkout']")
+    private WebElement itemCheckOut;
+
     /*public void addProduct(){
         btnAddBackPack.click();
         btnBikeLight.click();
@@ -39,6 +42,10 @@ public class AddProducts {
 
     public void checkCart(){
         btnCart.click();
+    }
+
+    public void checkOut(){
+        itemCheckOut.click();
     }
 
 }
